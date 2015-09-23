@@ -9,5 +9,5 @@ import udes.ds.agent.Equation;
  *
  */
 public interface IDerivationCommands extends Remote {
-    Equation Derivate(Equation e) throws RemoteException;
+    boolean Derivate(String e) throws RemoteException;
 }
