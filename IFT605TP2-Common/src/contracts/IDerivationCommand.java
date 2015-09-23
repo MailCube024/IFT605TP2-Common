@@ -7,7 +7,7 @@ import udes.ds.agent.Equation;
 /**
  *
  */
-public interface IDerivationCommands extends Remote {
+public interface IDerivationCommand extends Remote {
 
     public Equation Derivate(Equation e) throws RemoteException;
 }
