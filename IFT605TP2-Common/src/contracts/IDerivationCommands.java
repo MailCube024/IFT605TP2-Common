@@ -1,4 +1,3 @@
-
 package contracts;
 
 import java.rmi.Remote;
@@ -9,5 +8,6 @@ import udes.ds.agent.Equation;
  *
  */
 public interface IDerivationCommands extends Remote {
-    boolean Derivate(String e) throws RemoteException;
+
+    public Equation Derivate(Equation e) throws RemoteException;
 }
