@@ -11,5 +11,6 @@ package constants;
  */
 public class Constants {
     public static final String DERIVATION_ENGINE_ID = "DerivationEngine";
+    public static final String ADMIN_ENGINE_ID = "AdminEngine";
     public static final int RMI_PORT = 1099; 
 }
