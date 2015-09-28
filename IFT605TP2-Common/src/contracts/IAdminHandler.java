@@ -5,7 +5,6 @@
  */
 package contracts;
 
-import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 /**
@@ -13,5 +12,5 @@ import java.rmi.RemoteException;
  * @author Michaël
  */
 public interface IAdminHandler extends IDerivationHandler{
-    public boolean StopTask() throws RemoteException;
+    public boolean StopTask(String name) throws RemoteException;
 }
