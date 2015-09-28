@@ -12,6 +12,7 @@ import java.rmi.RemoteException;
  * @author Michaël
  */
 public interface IAdminHandler extends IDerivationHandler{
-    public boolean StopTask(String name) throws RemoteException;
-    public String[] GetCurrentlyRunningTask() throws RemoteException;
+    public long Connect(String username, String password) throws RemoteException;
+    public boolean StopTask(String name, long adminKey) throws RemoteException;
+    public String[] GetCurrentlyRunningTask(long adminKey) throws RemoteException;
 }
