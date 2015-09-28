@@ -16,3 +16,4 @@ hs_err_pid*
 /IFT605TP2-Common/nbproject/private/
 /IFT605TP2-Common/build/
 /IFT605TP2-Common/dist/
+*.swp
