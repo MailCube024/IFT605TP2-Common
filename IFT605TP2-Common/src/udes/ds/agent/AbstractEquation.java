@@ -21,12 +21,14 @@ public abstract class AbstractEquation implements Equation {
 	 * @return      String          
 	 */
 	abstract public String getUserReadableString();
-
+        
 	/**   
 	 * @see udes.ds.rmi.hw.Equation#printUserReadable()      
 	 */
 	public void printUserReadable() {
 		System.out.println("y = " + this.getUserReadableString());
 	}
+        
+        
 
 }

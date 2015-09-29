@@ -29,5 +29,5 @@ public interface Equation extends Serializable {
 	 * @return      void          
 	 */
 	abstract public void printUserReadable() ;
-
+        abstract public AbstractEquation derivate();
 }

@@ -14,37 +14,44 @@ package udes.ds.agent;
  * @see          
  */
 public class BasicEquation extends AbstractEquation {
-	
-	private static final long	 serialVersionUID	= 1L;
-	private double _coefficient;
-	private int _exponent;
-	
-	public BasicEquation(double coefficient, int exponent) {
-		super();
-		_coefficient = coefficient;
-		_exponent = exponent;
-	}
 
-	public double getCoefficient() {
-		return _coefficient;
-	}
+    private static final long	 serialVersionUID	= 1L;
+    private double _coefficient;
+    private int _exponent;
 
-	public int getExponent() {
-		return _exponent;
-	}
+    public BasicEquation(double coefficient, int exponent) {
+            super();
+            _coefficient = coefficient;
+            _exponent = exponent;
+    }
 
-	/**  
-	 * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)      
-	 */
-	public double getFunctionValue(double x) {
-		return ((Math.pow(x,_exponent))*_coefficient);
-	}
+    public double getCoefficient() {
+            return _coefficient;
+    }
 
-	/**  
-	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
-	 */
-	public String getUserReadableString() {
-		return new String(Double.toString(_coefficient) + "x^" + Integer.toString(_exponent));
-	}
+    public int getExponent() {
+            return _exponent;
+    }
 
+    /**  
+     * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)      
+     */
+    public double getFunctionValue(double x) {
+            return ((Math.pow(x,_exponent))*_coefficient);
+    }
+
+    /**  
+     * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
+     */
+    public String getUserReadableString() {
+            return new String(Double.toString(_coefficient) + "x^" + Integer.toString(_exponent));
+    }
+
+    /**
+    * Derivation de l'equation
+    */
+    public AbstractEquation derivate(){
+        return new BasicEquation(this.getCoefficient() * this.getExponent(), this.getExponent() - 1);
+    }
+        
 }

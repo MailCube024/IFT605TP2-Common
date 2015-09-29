@@ -14,37 +14,45 @@ package udes.ds.agent;
  */
 public class MultiplicativeEquation extends AbstractEquation {
 	
-	private static final long	 serialVersionUID	= 1L;
-	private AbstractEquation _first;
-	private AbstractEquation _second;
-	
-	public MultiplicativeEquation(AbstractEquation first, AbstractEquation second) {
-		super();
-		_first = first;
-		_second = second;
-	}
+    private static final long	 serialVersionUID	= 1L;
+    private AbstractEquation _first;
+    private AbstractEquation _second;
 
-	public AbstractEquation getFirst() {
-		return _first;
-	}
+    public MultiplicativeEquation(AbstractEquation first, AbstractEquation second) {
+            super();
+            _first = first;
+            _second = second;
+    }
 
-	public AbstractEquation getSecond() {
-		return _second;
-	}
+    public AbstractEquation getFirst() {
+            return _first;
+    }
 
-	/**   
-	 * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)      
-	 */
-	public double getFunctionValue(double x) {
-		return (_first.getFunctionValue(x) * _second.getFunctionValue(x));
-	}
+    public AbstractEquation getSecond() {
+            return _second;
+    }
 
-	/**   
-	 * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
-	 */
-	public String getUserReadableString() {
-		return new String("(" + _first.getUserReadableString() + ")(" + _second.getUserReadableString() + ")");
-	}
+    /**   
+     * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)      
+     */
+    public double getFunctionValue(double x) {
+            return (_first.getFunctionValue(x) * _second.getFunctionValue(x));
+    }
 
+    /**   
+     * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
+     */
+    public String getUserReadableString() {
+            return new String("(" + _first.getUserReadableString() + ")(" + _second.getUserReadableString() + ")");
+    }
+    
+    /**
+    * Derivation de l'equation
+    */
+    public AbstractEquation derivate(){
+        MultiplicativeEquation first = new MultiplicativeEquation(this.getFirst().derivate(), this.getSecond());
+        MultiplicativeEquation second = new MultiplicativeEquation(this.getFirst(), this.getSecond().derivate());
 
+        return new SummativeEquation(first, second);
+    }
 }
