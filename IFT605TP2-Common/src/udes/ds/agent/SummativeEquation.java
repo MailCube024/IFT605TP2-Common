@@ -1,20 +1,17 @@
 /**
- * udes.ds.rmi
- * SummativeEquation.java
- * 3 sept. 08
+ * udes.ds.rmi SummativeEquation.java 3 sept. 08
  */
 package udes.ds.agent;
 
-
 /**
  * Stores an equation of the type f(x) + g(x)
- * 
- * @author      Luc Bergevin
- * @version     1.0
+ *
+ * @author Luc Bergevin
+ * @version 1.0
  */
 public class SummativeEquation extends AbstractEquation {
-    
-    private static final long	 serialVersionUID	= 1L;
+
+    private static final long serialVersionUID = 1L;
     private AbstractEquation _first;
     private AbstractEquation _second;
 

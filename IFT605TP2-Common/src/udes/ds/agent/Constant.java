@@ -24,15 +24,20 @@ public class Constant extends AbstractEquation {
     }
 
     /**
+     * @param x
+     * @return
      * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)
      */
+    @Override
     public double getFunctionValue(double x) {
         return _value;
     }
 
     /**
+     * @return 
      * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()
      */
+    @Override
     public String getUserReadableString() {
         return Double.toString(_value);
     }
