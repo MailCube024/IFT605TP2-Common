@@ -26,5 +26,4 @@ public abstract class AbstractEquation implements Equation {
     public void printUserReadable() {
         System.out.println("y = " + this.getUserReadableString());
     }
-
 }

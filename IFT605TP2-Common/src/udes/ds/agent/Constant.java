@@ -41,5 +41,12 @@ public class Constant extends AbstractEquation {
     public String getUserReadableString() {
         return Double.toString(_value);
     }
-
+    
+    /**
+    * Derivation de l'equation
+    */
+    public AbstractEquation derivate(){
+        return new Constant(0);
+    }
+    
 }

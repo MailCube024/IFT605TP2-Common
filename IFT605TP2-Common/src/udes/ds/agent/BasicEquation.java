@@ -48,4 +48,11 @@ public class BasicEquation extends AbstractEquation {
         return Double.toString(_coefficient) + "x^" + Integer.toString(_exponent);
     }
 
+    /**
+    * Derivation de l'equation
+    */
+    public AbstractEquation derivate(){
+        return new BasicEquation(this.getCoefficient() * this.getExponent(), this.getExponent() - 1);
+    }
+        
 }

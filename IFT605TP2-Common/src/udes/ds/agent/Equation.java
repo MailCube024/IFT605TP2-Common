@@ -27,6 +27,6 @@ public interface Equation extends Serializable {
 	 * Prints to the system output a user-readable form of the equation
 	 *          
 	 */
-	abstract public void printUserReadable();
-
+	abstract public void printUserReadable() ;
+        abstract public AbstractEquation derivate();
 }

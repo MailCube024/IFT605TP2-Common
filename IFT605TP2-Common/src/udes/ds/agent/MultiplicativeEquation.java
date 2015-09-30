@@ -16,35 +16,40 @@ public class MultiplicativeEquation extends AbstractEquation {
     private AbstractEquation _second;
 
     public MultiplicativeEquation(AbstractEquation first, AbstractEquation second) {
-        super();
-        _first = first;
-        _second = second;
+            super();
+            _first = first;
+            _second = second;
     }
 
     public AbstractEquation getFirst() {
-        return _first;
+            return _first;
     }
 
     public AbstractEquation getSecond() {
-        return _second;
+            return _second;
     }
 
-    /**
-     * @param x
-     * @return
-     * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)
+    /**   
+     * @see udes.ds.rmi.hw.Equation#getFunctionValue(double)      
      */
-    @Override
     public double getFunctionValue(double x) {
-        return (_first.getFunctionValue(x) * _second.getFunctionValue(x));
+            return (_first.getFunctionValue(x) * _second.getFunctionValue(x));
     }
 
-    /**
-     * @return @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()
+    /**   
+     * @see udes.ds.rmi.hw.AbstractEquation#getUserReadableString()      
      */
-    @Override
     public String getUserReadableString() {
-        return _first.getUserReadableString() + "(" + ")(" + _second.getUserReadableString() + ")";
+            return new String("(" + _first.getUserReadableString() + ")(" + _second.getUserReadableString() + ")");
     }
+    
+    /**
+    * Derivation de l'equation
+    */
+    public AbstractEquation derivate(){
+        MultiplicativeEquation first = new MultiplicativeEquation(this.getFirst().derivate(), this.getSecond());
+        MultiplicativeEquation second = new MultiplicativeEquation(this.getFirst(), this.getSecond().derivate());
 
+        return new SummativeEquation(first, second);
+    }
 }
